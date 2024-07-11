@@ -1,3 +1,4 @@
 # jersey colors
 
-# test commit
+# TODO
+# see project plan
