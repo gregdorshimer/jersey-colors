@@ -12,3 +12,9 @@ matchups, and calculate contrasts.
 
 jersey-colors.ipynb contains the walkthrough of using jersey-colors.py to benchmark the performance of different
 assignment strategies.
+
+
+Note that this project uses a simplified model for representing colors and contrast.
+
+Further reading:
+http://www.workwithcolor.com/color-properties-definitions-0101.htm
