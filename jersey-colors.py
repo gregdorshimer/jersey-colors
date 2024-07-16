@@ -15,6 +15,7 @@ def create_league_contrast_even_spacing(num_teams, contrast):
     columns color1 and color2 (integers, 0 - 359).
     """
 
+    # init output
     rows = []
 
     # append a new row num_teams times, color pairs that are 'contrast' apart, and where
@@ -38,6 +39,7 @@ def create_league_contrast_random_spacing(num_teams, contrast):
     columns color1 and color2 (integers, 0 - 359).
     """
 
+    # init output
     rows = []
 
     # append a new row num_teams times, color pairs that are 'contrast' apart, and where
@@ -59,6 +61,7 @@ def create_league_true_random(num_teams):
     columns color1 and color2 (integers, 0 - 359).
     """
 
+    # init output
     rows = []
 
     # append a new row num_teams times, with random color assignments
