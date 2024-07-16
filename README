@@ -1,6 +1,6 @@
 README
 
-A project to determine a method for assigning two colors of jerseys to each team in a sports league
+A project to determine a method or contrast value for assigning two colors of jerseys to each team in a sports league
 that maximizes the minimum "contrast" achievable between any random pair of teams.
 
 Colors are measured in degrees (0 - 359). Contrast between two colors x and y is equal to the lesser of
@@ -15,6 +15,5 @@ assignment strategies.
 
 
 Note that this project uses a simplified model for representing colors and contrast.
-
 Further reading:
 http://www.workwithcolor.com/color-properties-definitions-0101.htm
