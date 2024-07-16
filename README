@@ -1,0 +1,14 @@
+README
+
+A project to determine a method for assigning two colors of jerseys to each team in a sports league
+that maximizes the minimum "contrast" achievable between any random pair of teams.
+
+Colors are measured in degrees (0 - 359). Contrast between two colors x and y is equal to the lesser of
+-- abs(x - y)
+-- min(x,y) + 360 - max(x,y)
+
+jersey-colors.py contains function definitions used to create sample leagues with color assignments, generate
+matchups, and calculate contrasts.
+
+jersey-colors.ipynb contains the walkthrough of using jersey-colors.py to benchmark the performance of different
+assignment strategies.
