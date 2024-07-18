@@ -70,9 +70,22 @@ def create_league_true_random(num_teams):
     return pd.DataFrame(rows, columns=['color1', 'color2'])
 
 
+def jersey_contrast(jersey1, jersey2):
+    """
+    Returns the contrast between two given jersey colors. Calculation needed because colors are circular around
+    the color wheel (in range(360)), so jersey_contrast(10, 350) -> 20, not 340.
+    :param jersey1: integer in range(360)
+    :param jersey2: integer in range(360)
+    :return: an integer representing the contrast (difference) between the two given values
+    """
+    contrast1 = abs(jersey1 - jersey2)
+    contrast2 = min(jersey1, jersey2) + 360 - max(jersey1, jersey2)
+    return min(contrast1, contrast2)
+
+
 def team_contrast(team1a, team1b, team2a, team2b):
     """
-    Returns the highest achievable contrast between two teams
+    Returns the highest achievable contrast between two teams, each with two jerseys assigned
     :param team1a: integer in range(360), representing team1 color1
     :param team1b: integer in range(360), representing team1 color2
     :param team2a: integer in range(360), representing team2 color1
@@ -87,25 +100,12 @@ def team_contrast(team1a, team1b, team2a, team2b):
     return max(dif1, dif2, dif3, dif4)
 
 
-def jersey_contrast(jersey1, jersey2):
-    """
-    Returns the contrast between two given jersey colors. Calculation needed because colors are circular around
-    the color wheel (in range(360)), so jersey_contrast(10, 350) -> 20, not 340.
-    :param jersey1: integer in range(360)
-    :param jersey2: integer in range(360)
-    :return: an integer representing the contrast (difference) between the two given values
-    """
-    contrast1 = abs(jersey1 - jersey2)
-    contrast2 = min(jersey1, jersey2) + 360 - max(jersey1, jersey2)
-    return min(contrast1, contrast2)
-
-
 def league_contrast(league):
     """
     Takes a league's dataframe and outputs a dataframe with a row representing each
     possible matchup and the corresponding contrast
-    :param league dataframe containing a row for each time with two color assignments
-    :return: a dataframe with columns for matchup and contrast
+    :param league dataframe containing a row for each team with two color assignments
+    :return: a dataframe with columns for first team, second team, and contrast
     """
     # init output
     rows = []
